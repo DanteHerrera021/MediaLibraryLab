@@ -39,7 +39,7 @@ do
 
         while (true)
         {
-            Console.WriteLine("Add a new ticket (Y/N)?");
+            Console.WriteLine("Add a new movie (Y/N)?");
             string resp = Console.ReadLine().ToUpper();
             if (resp != "Y") { break; }
 
@@ -66,6 +66,24 @@ do
             secs = int.Parse(Console.ReadLine());
 
             movie.runningTime = new TimeSpan(hours, mins, secs);
+
+            string input;
+            do
+            {
+                Console.WriteLine("Enter genre (or done to quit)");
+
+                input = Console.ReadLine();
+
+                if (input != "done" && input.Length > 0)
+                {
+                    movie.genres.Add(input);
+                }
+            } while (input != "done");
+
+            if (movie.genres.Count == 0)
+            {
+                movie.genres.Add("(no genres listed)");
+            }
 
         }
     }
