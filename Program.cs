@@ -47,6 +47,26 @@ do
 
             movie.mediaId = movieFile.Movies[^1].mediaId + 1;
 
+            Console.WriteLine("Enter movie title");
+            movie.title = Console.ReadLine();
+
+            Console.WriteLine("Enter the movie director");
+            movie.director = Console.ReadLine();
+
+            int hours;
+            int mins;
+            int secs;
+            Console.WriteLine("Enter the movie's run time in hours");
+            hours = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the movie's run time in the remaining minutes");
+            mins = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the movie's run time in the remaining seconds");
+            secs = int.Parse(Console.ReadLine());
+
+            movie.runningTime = new TimeSpan(hours, mins, secs);
+
         }
     }
 
