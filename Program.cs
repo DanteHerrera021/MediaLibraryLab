@@ -42,6 +42,11 @@ do
             Console.WriteLine("Add a new ticket (Y/N)?");
             string resp = Console.ReadLine().ToUpper();
             if (resp != "Y") { break; }
+
+            Movie movie = new Movie();
+
+            movie.mediaId = movieFile.Movies[^1].mediaId + 1;
+
         }
     }
 
