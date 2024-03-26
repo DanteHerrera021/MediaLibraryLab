@@ -26,8 +26,7 @@ do
     if (userInput == "1")
     {
 
-        // TODO: ADD VIEW OPTIONS
-        logger.Info($"Logging {movieFile.Movies.Count} movies");
+        logger.Info($"Displaying {movieFile.Movies.Count} movies");
 
         for (int i = 0; i < movieFile.Movies.Count; i++)
         {
@@ -37,6 +36,13 @@ do
     else if (userInput == "2")
     {
         // TODO: ALLOW FOR MOVIE ADDITION
+
+        while (true)
+        {
+            Console.WriteLine("Add a new ticket (Y/N)?");
+            string resp = Console.ReadLine().ToUpper();
+            if (resp != "Y") { break; }
+        }
     }
 
 } while (userInput == "1" || userInput == "2");
