@@ -35,7 +35,6 @@ do
     }
     else if (userInput == "2")
     {
-        // TODO: ALLOW FOR MOVIE ADDITION
 
         while (true)
         {
@@ -71,20 +70,18 @@ do
             do
             {
                 Console.WriteLine("Enter genre (or done to quit)");
-
                 input = Console.ReadLine();
-
                 if (input != "done" && input.Length > 0)
                 {
                     movie.genres.Add(input);
                 }
             } while (input != "done");
-
             if (movie.genres.Count == 0)
             {
                 movie.genres.Add("(no genres listed)");
             }
 
+            movieFile.AddMovie(movie);
         }
     }
 
