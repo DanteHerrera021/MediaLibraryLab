@@ -25,7 +25,14 @@ do
 
     if (userInput == "1")
     {
+
         // TODO: ADD VIEW OPTIONS
+        logger.Info($"Logging {movieFile.Movies.Count} movies");
+
+        for (int i = 0; i < movieFile.Movies.Count; i++)
+        {
+            Console.WriteLine(movieFile.Movies[i].Display());
+        }
     }
     else if (userInput == "2")
     {
