@@ -91,6 +91,13 @@ do
 
         Console.WriteLine("Please enter a the search term for some something");
         string search = Console.ReadLine();
+
+        logger.Info($"User's search is: {search}");
+
+        var movies = movieFile.Movies.Where(movie => movie.title.Contains(search))
+            .Select(movie => movie.title);
+
+        logger.Info($"There are {movies.Count()} movies on file");
     }
 
 } while (userInput == "1" || userInput == "2" || userInput == "3");
