@@ -87,7 +87,10 @@ do
     }
     else if (userInput == "3")
     {
+        logger.Info($"There are {movieFile.Movies.Count} movies on file");
 
+        Console.WriteLine("Please enter a the search term for some something");
+        string search = Console.ReadLine();
     }
 
 } while (userInput == "1" || userInput == "2" || userInput == "3");
