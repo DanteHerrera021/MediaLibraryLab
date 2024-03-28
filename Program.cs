@@ -89,20 +89,26 @@ do
     {
         logger.Info($"There are {movieFile.Movies.Count} movies on file");
 
-        Console.WriteLine("Please enter a the search term for some something");
+        Console.WriteLine("Please enter a search term for a movie title");
         string search = Console.ReadLine();
 
-        logger.Info($"User's search is: {search}");
+        logger.Info($"User's search is: \"{search}\"");
 
-        var movies = movieFile.Movies.Where(movie => movie.title.Contains(search))
+        var movies = movieFile.Movies.Where(movie => movie.title.ToLower().Contains(search.ToLower()))
             .Select(movie => movie.title);
 
         logger.Info($"There are {movies.Count()} movies on file");
 
+        Console.WriteLine();
+
+        int i = 1;
         foreach (string m in movies)
         {
-            Console.WriteLine(m);
+            Console.WriteLine($"{i}.) {m}");
+            i++;
         }
+
+        Console.WriteLine();
     }
 
 } while (userInput == "1" || userInput == "2" || userInput == "3");
