@@ -19,6 +19,7 @@ do
     Console.WriteLine("Welcome to the Media Library Lab!");
     Console.WriteLine("Please type 1 to view all available movies");
     Console.WriteLine("Please type 2 to add a new movie");
+    Console.WriteLine("Please type 3 to search for a movie");
     Console.WriteLine("Press enter to exit the program.");
 
     userInput = Console.ReadLine();
@@ -84,7 +85,11 @@ do
             movieFile.AddMovie(movie);
         }
     }
+    else if (userInput == "3")
+    {
 
-} while (userInput == "1" || userInput == "2");
+    }
+
+} while (userInput == "1" || userInput == "2" || userInput == "3");
 
 logger.Info("Program ended");
