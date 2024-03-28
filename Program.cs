@@ -98,6 +98,11 @@ do
             .Select(movie => movie.title);
 
         logger.Info($"There are {movies.Count()} movies on file");
+
+        foreach (string m in movies)
+        {
+            Console.WriteLine(m);
+        }
     }
 
 } while (userInput == "1" || userInput == "2" || userInput == "3");
